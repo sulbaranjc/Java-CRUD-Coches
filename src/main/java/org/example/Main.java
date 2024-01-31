@@ -60,14 +60,28 @@ public class Main {
         System.out.print("Color: ");
         color = scannerStr.nextLine();
         gc.agregarCoche(new Coche( marca, modelo, anio, color));
+        System.out.println("\nCoche agregado con exito.......!");
+        pausa();
+    }
+    private static void cabeceraListarCoches() {
+        // Salida de datos con variable local
+        System.out.println("\n\n          Listado de Coches");
+        System.out.println("============================================================");
+        System.out.println("ID  Marca                 Modelo          Año   Color");
+        System.out.println("============================================================");
+    }
+
+    private static void pausa() {
+        System.out.println();
+        System.out.println("Presione ENTER para continuar...");
+        scannerStr.nextLine();
     }
     private static void mostrarCoches() {
-        System.out.println("Listado de Coches");
-        System.out.println("=================");
-        System.out.println();
+        cabeceraListarCoches();
         for (Coche c : gc.listarCoches()) {
-            System.out.println(c.getId() + " - " + c.getMarca() + " - " + c.getModelo() + " - " + c.getAnio() + " - " + c.getColor());
+            System.out.println(c.toStr());
         }
+        pausa();
     }
     private static void  mocearCoches() {
         gc.agregarCoche(new Coche("Toyota", "Corolla", 2018, "Azul"));
@@ -80,5 +94,7 @@ public class Main {
         gc.agregarCoche(new Coche("Mercedes-Benz", "Clase C", 2023, "Negro"));
         gc.agregarCoche(new Coche("Subaru", "Impreza", 2015, "Rojo"));
         gc.agregarCoche(new Coche("Mazda", "3", 2014, "Azul"));
+        System.out.println("\n10 registros agrados con exito.......!");
+        pausa();
     }
 }

@@ -64,7 +64,8 @@ public class Coche {
     public void setBorrado(boolean borrado) {
         this.borrado = borrado;
     }
-    public String toStr(){
-        return id + " - " + marca + " - " + modelo + " - " + anio + " - " + color;
+    public String toStr() {
+        // Asumiendo anchos de campo fijos, ajusta los números según sea necesario
+        return String.format("%-4d %-20s %-15s %-6d %-10s", id, marca, modelo, anio, color);
     }
 }
